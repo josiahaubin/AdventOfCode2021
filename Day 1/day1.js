@@ -37,19 +37,19 @@ function partOne(arr) {
 function partTwo(arr) {
     let total = 0;
     for (let i = 0; i <= arr.length; i++) {
-        const firstDepth = arr[i];
-        const secondDepth = arr[i + 1];
-        const thirdDepth = arr[i + 2];
-        const nextFirstDepth = secondDepth;
-        const nextSecondDepth = thirdDepth;
-        const lastDepth = arr[i + 3]
+        const p1Depth = arr[i];
+        const p2Depth = arr[i + 1];
+        const p3Depth = arr[i + 2];
+        const n1Depth = p2Depth;
+        const n2Depth = p3Depth;
+        const n3Depth = arr[i + 3]
 
         if ((i + 2) > arr.length) {
             return total;
         }
 
-        let firstSum = firstDepth + secondDepth + thirdDepth;
-        let secondSum = nextFirstDepth + nextSecondDepth + lastDepth;
+        let firstSum = p1Depth + p2Depth + p3Depth;
+        let secondSum = n1Depth + n2Depth + n3Depth;
 
         if (secondSum > firstSum) {
             total++
